@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/numero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tituloNro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha inicio: "/>
+
+        <TextView
+            android:id="@+id/fechaInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Fecha inicio" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tituloFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha fin: "/>
+        <TextView
+            android:id="@+id/fechaFin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Fecha fin"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/importe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tituloImporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Importe: "/>
+        <TextView
+            android:id="@+id/valorPapu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Importe"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/enable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tituloEn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado: "/>
+        <TextView
+            android:id="@+id/valorEn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Vigente"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/espacioBonito"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"/>
+</LinearLayout>

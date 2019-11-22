@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/dnis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/dniInqui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D.N.I.: "/>
+
+        <TextView
+            android:id="@+id/valorDni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="D.N.I." />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/apellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/apellidoInqui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellido: "/>
+        <TextView
+            android:id="@+id/valorApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Apellido"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/nombreI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/nombreInqui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre: "/>
+        <TextView
+            android:id="@+id/valorNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/direccionI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/direccionInqui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dirección: "/>
+        <TextView
+            android:id="@+id/valorDireccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Direccion"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/telInqui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teléfono: "/>
+        <TextView
+            android:id="@+id/valorTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Telefono"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/espacioBonito"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"/>
+
+</LinearLayout>

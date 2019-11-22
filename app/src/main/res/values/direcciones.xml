@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="direcciones">
+     <item>Las Heras 1225</item>
+     <item>San Martin y Lavalle</item>
+     <item>Justo Darac 322</item>
+     <item>Perú 205</item>
+ </string-array>
+
+    <string-array name="usos">
+        <item>Comercial</item>
+        <item>Residencial</item>
+    </string-array>
+
+    <string-array name="tipos">
+        <item>Casa</item>
+        <item>Departamento</item>
+        <item>Local</item>
+    </string-array>
+</resources>
