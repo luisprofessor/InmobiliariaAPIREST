@@ -13,6 +13,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.inmobiliaria.model.Propietario;
+import com.example.inmobiliaria.model.Usuario;
 import com.example.inmobiliaria.request.ApiClient;
 
 import java.nio.charset.StandardCharsets;
@@ -37,49 +38,39 @@ import retrofit2.Response;
 
 public class PerfilViewModel extends AndroidViewModel {
     private Context context;
-    private MutableLiveData<Propietario> propietarioMutableLiveData;
+    private MutableLiveData<Usuario> usuarioMutableLiveData;
 
     public PerfilViewModel(@NonNull Application application) {
         super(application);
         context=application.getApplicationContext();
     }
 
-    public LiveData<Propietario> getPropietarioMutableLiveData(){
-        if(propietarioMutableLiveData==null){
-            propietarioMutableLiveData=new MutableLiveData<>();
+    public LiveData<Usuario> getPropietarioMutableLiveData(){
+        if(usuarioMutableLiveData==null){
+            usuarioMutableLiveData=new MutableLiveData<>();
         }
-        return propietarioMutableLiveData;
+        return usuarioMutableLiveData;
     }
 
     public void leer(){
-        SharedPreferences sp=context.getSharedPreferences("token",0);
-        String accessToken=sp.getString("token","");
-        Call<Propietario> propietarioCall= ApiClient.getMyApiClient().leer(accessToken);
-        propietarioCall.enqueue(new Callback<Propietario>() {
-            @Override
-            public void onResponse(Call<Propietario> call, Response<Propietario> response) {
+        SharedPreferences sp=context.getSharedPreferences("usuario",0);
+        String apellido=sp.getString("apellido","");
+        String nombre=sp.getString("nombre","");
+        String mail=sp.getString("mail","");
+        String password=sp.getString("password","");
+        Usuario usuario=new Usuario();
+        usuario.setApellido(apellido);
+        usuario.setNombre(nombre);
+        usuario.setMail(mail);
+        usuario.setPassword(password);
 
-                if(response.isSuccessful()){
-                    Propietario propietario=response.body();
-                    propietarioMutableLiveData.postValue(propietario);
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<Propietario> call, Throwable t) {
-
-                Toast.makeText(getApplication(),t.getMessage(),Toast.LENGTH_LONG).show();
-
-            }
-        });
+        usuarioMutableLiveData.setValue(usuario);
     }
-public void actualizar(Propietario propietario){
+public void actualizar(Usuario usuario){
             SharedPreferences sp=context.getSharedPreferences("token",0);
             String accessToken=sp.getString("token","");
 
-        Call<Propietario> proActualizado=ApiClient.getMyApiClient().actualizar(accessToken,propietario.getIdPropietario(),propietario.getNombre(),propietario.getApellido(),propietario.getDni(),propietario.getCorreo(),propietario.getClave(),propietario.getEstadoPropietario(),propietario.getTelefono());
+       /* Call<Propietario> proActualizado=ApiClient.getMyApiClient().actualizar(accessToken,propietario.getIdPropietario(),propietario.getNombre(),propietario.getApellido(),propietario.getDni(),propietario.getCorreo(),propietario.getClave(),propietario.getEstadoPropietario(),propietario.getTelefono());
         proActualizado.enqueue(new Callback<Propietario>() {
             @Override
             public void onResponse(Call<Propietario> call, Response<Propietario> response) {
@@ -94,7 +85,7 @@ public void actualizar(Propietario propietario){
 
             }
         });
-
+*/
 }
 
 

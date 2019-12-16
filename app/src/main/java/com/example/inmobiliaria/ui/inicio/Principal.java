@@ -1,8 +1,10 @@
 package com.example.inmobiliaria.ui.inicio;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.inmobiliaria.R;
+import com.example.inmobiliaria.model.Usuario;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -50,15 +52,25 @@ public class Principal extends AppCompatActivity {
 
         View hView=navigationView.getHeaderView(0);
             titulo=hView.findViewById(R.id.titulo);
-            //titulo.setText(MainActivity.sesion.getNombre()+" "+MainActivity.sesion.getApellido());
+        SharedPreferences sp=getSharedPreferences("usuario",0);
+        String apellido=sp.getString("apellido","");
+        String nombre=sp.getString("nombre","");
+        String mail=sp.getString("mail","");
+        String password=sp.getString("password","");
+        Usuario usuario=new Usuario();
+        usuario.setApellido(apellido);
+        usuario.setNombre(nombre);
+        usuario.setMail(mail);
+        usuario.setPassword(password);
+        titulo.setText(usuario.getApellido()+", "+usuario.getNombre());
 
             secundario=hView.findViewById(R.id.secundario);
             //secundario.setText(MainActivity.sesion.getMail());
 
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_perfil, R.id.nav_propiedades, R.id.nav_inquilinos,
-                R.id.nav_pagos, R.id.nav_contratos, R.id.nav_logout)
+                R.id.nav_perfil, R.id.nav_checkin, R.id.nav_checkout,
+                R.id.nav_entradas, R.id.nav_logout)
                 .setDrawerLayout(drawer)
                 .build();
 

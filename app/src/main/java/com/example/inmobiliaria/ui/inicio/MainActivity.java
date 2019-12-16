@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     public void ingresar(android.view.View view){

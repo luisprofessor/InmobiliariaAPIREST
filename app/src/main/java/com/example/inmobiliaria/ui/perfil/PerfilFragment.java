@@ -2,6 +2,7 @@ package com.example.inmobiliaria.ui.perfil;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,16 +17,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.inmobiliaria.model.Propietario;
+import com.example.inmobiliaria.model.Usuario;
 import com.example.inmobiliaria.request.ApiClient;
 import com.example.inmobiliaria.ui.inicio.MainActivity;
 import com.example.inmobiliaria.ui.inicio.Principal;
 import com.example.inmobiliaria.R;
 
 public class PerfilFragment extends Fragment {
-    EditText dni, apellido, nombres, tel, mail, pass;
+    EditText apellido, nombres,  mail, pass;
     Button aceptar,editar;
     private PerfilViewModel perfilViewModel;
-    private Propietario propietarioVisto=null;
+    private Usuario propietarioVisto=null;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -36,10 +38,9 @@ public class PerfilFragment extends Fragment {
 
 
 
-        dni=root.findViewById(R.id.dni);
+
         apellido=root.findViewById(R.id.apellido);
         nombres=root.findViewById(R.id.nombres);
-        tel=root.findViewById(R.id.tel);
         mail=root.findViewById(R.id.mail);
         pass=root.findViewById(R.id.pass);
 
@@ -47,15 +48,17 @@ public class PerfilFragment extends Fragment {
         editar=root.findViewById(R.id.editar);
 
         perfilViewModel=ViewModelProviders.of(this).get(PerfilViewModel.class);
-        perfilViewModel.getPropietarioMutableLiveData().observe(this, new Observer<Propietario>() {
+        perfilViewModel.getPropietarioMutableLiveData().observe(this, new Observer<Usuario>() {
             @Override
-            public void onChanged(Propietario propietario) {
+            public void onChanged(Usuario usuario) {
 
-                propietarioVisto=propietario;
+                propietarioVisto=usuario;
 
-                fijarDatos(propietario);
+                fijarDatos(usuario);
 
             }
+
+
         });
 
 
@@ -90,10 +93,9 @@ public class PerfilFragment extends Fragment {
     }
 
     public void editar(){
-        dni.setEnabled(true);
+
         apellido.setEnabled(true);
         nombres.setEnabled(true);
-        tel.setEnabled(true);
         mail.setEnabled(true);
         pass.setEnabled(true);
 
@@ -103,28 +105,27 @@ public class PerfilFragment extends Fragment {
     }
 
     public void aceptar(){
-       propietarioVisto.setDni(Integer.parseInt(dni.getText().toString()));
+
        propietarioVisto.setApellido(apellido.getText().toString());
         propietarioVisto.setNombre(nombres.getText().toString());
-        propietarioVisto.setTelefono(Integer.parseInt(tel.getText().toString()));
-        propietarioVisto.setCorreo(mail.getText().toString());
-        propietarioVisto.setClave(pass.getText().toString());
+       propietarioVisto.setMail(mail.getText().toString());
+        propietarioVisto.setPassword(pass.getText().toString());
         perfilViewModel.actualizar(propietarioVisto);
     }
 
-    public void fijarDatos(Propietario sesion){
-        dni.setText(String.valueOf(sesion.getDni()));
+    public void fijarDatos(Usuario sesion){
+
         apellido.setText(String.valueOf(sesion.getApellido()));
         nombres.setText(String.valueOf(sesion.getNombre()));
-        tel.setText(String.valueOf(sesion.getTelefono()));
-        mail.setText(String.valueOf(sesion.getCorreo()));
-        pass.setText(String.valueOf(sesion.getClave()));
+
+        mail.setText(String.valueOf(sesion.getMail()));
+        pass.setText(String.valueOf(sesion.getPassword()));
         Log.d("salida",pass.getText()+"");
 
-        dni.setEnabled(false);
+
         apellido.setEnabled(false);
         nombres.setEnabled(false);
-        tel.setEnabled(false);
+
         mail.setEnabled(false);
         pass.setEnabled(false);
 

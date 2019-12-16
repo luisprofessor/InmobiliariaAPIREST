@@ -9,21 +9,18 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="Perfil" />
         <item
-            android:id="@+id/nav_propiedades"
+            android:id="@+id/nav_checkin"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Propiedades" />
+            android:title="Check-in" />
         <item
-            android:id="@+id/nav_inquilinos"
+            android:id="@+id/nav_checkout"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Inquilinos" />
+            android:title="Check-out" />
         <item
-            android:id="@+id/nav_pagos"
+            android:id="@+id/nav_entradas"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Pagos" />
-        <item
-            android:id="@+id/nav_contratos"
-            android:icon="@drawable/ic_menu_share"
-            android:title="Contratos" />
+            android:title="Entradas Hoy" />
+
 
     </group>
 

@@ -11,29 +11,24 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_perfil" />
 
-    <fragment
-        android:id="@+id/nav_propiedades"
-        android:name="com.example.inmobiliaria.ui.propiedades.PropiedadesFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_propiedades" />
 
     <fragment
-        android:id="@+id/nav_inquilinos"
-        android:name="com.example.inmobiliaria.ui.inquilinos.InquilinosFragment"
+        android:id="@+id/nav_checkout"
+        android:name="com.example.inmobiliaria.ui.checkout.CheckoutFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_inquilinos" />
+        tools:layout="@layout/fragment_checkout" />
 
     <fragment
-        android:id="@+id/nav_pagos"
-        android:name="com.example.inmobiliaria.ui.pagos.PagosFragment"
+        android:id="@+id/nav_entradas"
+        android:name="com.example.inmobiliaria.ui.entradas.EntradasFragment"
         android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_pagos" />
+        tools:layout="@layout/fragment_entradas" />
 
     <fragment
-        android:id="@+id/nav_contratos"
-        android:name="com.example.inmobiliaria.ui.contratos.ContratosFragment"
+        android:id="@+id/nav_checkin"
+        android:name="com.example.inmobiliaria.ui.checkin.CheckinFragment"
         android:label="@string/menu_share"
-        tools:layout="@layout/fragment_contratos" />
+        tools:layout="@layout/fragment_checkin" />
 
     <fragment
         android:id="@+id/nav_logout"

@@ -9,12 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import com.example.inmobiliaria.model.Propietario;
+import com.example.inmobiliaria.model.Usuario;
 import com.example.inmobiliaria.request.ApiClient;
 
-import java.util.MissingFormatArgumentException;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,29 +47,37 @@ public MutableLiveData<String> getToken(){
 }
 
 public void ingresar(String usuario,String clave){
+   String parametro="[{\"mail\":\""+usuario+"\" ,\"password\":\""+clave+"\"}]";
 
-    Call<String> dato= ApiClient.getMyApiClient().login(usuario,clave);
-
-    dato.enqueue(new Callback<String>() {
+    Call<List<Usuario>> dato= ApiClient.getMyApiClient().login(parametro);
+    Log.d("salida mapa:",parametro);
+    dato.enqueue(new Callback<List<Usuario>>() {
         @Override
-        public void onResponse(Call<String> call, Response<String> response) {
+        public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
 
 
             if(response.isSuccessful()) {
+                if(response.body().size()>0) {
+                Usuario u=response.body().get(0);
 
-                token.postValue(response.body());
-                SharedPreferences sp=context.getSharedPreferences("token",0);
+                SharedPreferences sp=context.getSharedPreferences("usuario",0);
                 SharedPreferences.Editor editor=sp.edit();
-                String t="Bearer "+response.body();
-                editor.putString("token",t);
+
+                editor.putString("apellido",u.getApellido());
+                editor.putString("nombre",u.getNombre());
+                editor.putString("mail",u.getMail());
+                editor.putString("password",u.getPassword());
+
                 editor.commit();
-                Log.d("salida ultimo token", t);
 
-
-
-
-                //Gone Visibility
+                    token.postValue(u.getApellido());
                     error.postValue(8);
+                }else{
+                    //Visible Visibility
+                    error.postValue(1);
+                }
+               //Gone Visibility
+
 
 
             }else{
@@ -82,10 +89,12 @@ public void ingresar(String usuario,String clave){
         }
 
         @Override
-        public void onFailure(Call<String> call, Throwable t) {
+        public void onFailure(Call<List<Usuario>> call, Throwable t) {
 
             error.postValue(0);
-            Log.d("salida",t.getMessage());
+            Log.d("salida Error",t.getMessage());
+            Log.d("salida Error",call.request().body().toString());
+            t.printStackTrace();
         }
     });
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/numero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/nroReservaTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nro. de Reserva: "/>
+
+        <TextView
+            android:id="@+id/nroReserva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Número" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/fechaIngresoTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Ingreso: "/>
+        <TextView
+            android:id="@+id/FechaIngreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Fecha"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fechasal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/fechaSalidaTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Salida: "/>
+        <TextView
+            android:id="@+id/fechaSalida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="fecha"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/titularsa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/titularTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titular: "/>
+        <TextView
+            android:id="@+id/titular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="nombre"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/espacioBonito"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"/>
+</LinearLayout>

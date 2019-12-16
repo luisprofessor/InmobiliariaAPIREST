@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/itemout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/idTipoElementoOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripcion: "
+            android:visibility="gone"
+            />
+        <TextView
+            android:id="@+id/descripcionOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripcion: "/>
+
+        <EditText
+            android:id="@+id/cantidadOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0" />
+        <EditText
+            android:id="@+id/cantidadSalidaOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0" />
+        <Button
+            android:id="@+id/masOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/espacioBonito"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"/>
+</LinearLayout>

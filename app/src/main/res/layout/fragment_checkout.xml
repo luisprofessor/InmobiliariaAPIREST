@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Spinner
+        android:id="@+id/titularOut"
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:id="@+id/espaciosBonitos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3" />
+
+    <EditText
+        android:id="@+id/etEntradaOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:text="Fecha de Entrada"
+        android:focusable="false"/>
+    <TextView
+        android:id="@+id/espaciosBonitoss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"/>
+    <Spinner
+        android:id="@+id/reservasOut"
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+    <TextView
+        android:id="@+id/espaciosBonitosss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"/>
+
+    <ListView
+        android:id="@+id/otraListaOut"
+        android:layout_width="match_parent"
+        android:layout_height="502dp" />
+    <Button
+        android:id="@+id/guardarOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
